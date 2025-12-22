@@ -19,7 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] ,
+      "@components/*": ["./src/components/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@types/*": ["./src/types/*"],
+      "@data/*": ["./src/data/*"]
     }
   },
   "include": [
@@ -29,6 +34,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/context/ThemeContext.tsx"  ],
   "exclude": ["node_modules"]
 }
