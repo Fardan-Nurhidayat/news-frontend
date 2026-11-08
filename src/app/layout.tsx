@@ -5,9 +5,9 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { Navbar } from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "Warta Berita - Jurnalisme Faktual & Independen",
   description:
-    "Stay updated with the latest news articles from around the world.",
+    "Portal warta berita terpercaya menyajikan kabar terkini seputar nasional, internasional, teknologi, bisnis, dan sains.",
 };
 
 export default function RootLayout({
@@ -16,11 +16,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-serif p-5">
+    <html lang="id" suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col antialiased bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-serif selection:bg-red-700 selection:text-white transition-colors">
         <ThemeProvider>
           <Navbar />
-          <TanstackProvider>{children}</TanstackProvider>
+          <div className="flex-1 px-4 sm:px-6 lg:px-8 py-6">
+            <TanstackProvider>{children}</TanstackProvider>
+          </div>
+          <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 py-8 px-4 sm:px-6 lg:px-8 transition-colors">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-gray-500 dark:text-gray-400">
+              <div className="flex items-center gap-2">
+                <span className="font-serif font-black text-sm text-gray-900 dark:text-gray-100">
+                  Warta Berita
+                </span>
+                <span>•</span>
+                <span>Hak Cipta Dilindungi Undang-Undang</span>
+              </div>
+              <div>
+                Data disajikan melalui integrasi News API dan kurasi redaksi.
+              </div>
+            </div>
+          </footer>
         </ThemeProvider>
       </body>
     </html>
